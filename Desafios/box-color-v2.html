@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <title>Colores2</title>
+      <style type="text/css">
+         #box{
+         width: 170px;
+         height: 170px;
+         background-color: red;
+         }
+      </style>
+   </head>
+   <body id="body">
+      <div id="box"></div>
+      <button id="green">Verde</button>
+      <button id="yellow">Amarillo</button>
+      <button id="red">Rojo</button><br>
+      <button id="aumentar">Dimensionar 400x400</button><br>
+      <button id="disminuir">Dimensionar 100x100</button>
+      <script type="text/javascript">
+         var caja = document.getElementById("box");
+         var verde = document.getElementById("green");
+         var amarillo = document.getElementById("yellow");
+         var rojo = document.getElementById("red");
+         
+         var aumentar = document.getElementById("aumentar");
+         var disminuir = document.getElementById("disminuir");
+         
+         verde.addEventListener('click', function(){
+            cambiar_color("green");
+         });
+         
+         amarillo.addEventListener('click', function(){
+            cambiar_color("yellow");
+         });
+         
+         rojo.addEventListener('click', function(){
+            cambiar_color("red");
+         });
+         
+         aumentar.addEventListener('click', function(){
+            dimensionar_caja("aumentar");
+         });
+         
+         disminuir.addEventListener('click', function(){
+            dimensionar_caja("disminuir");
+         });
+         
+         function cambiar_color(color){
+            caja.style.backgroundColor = color;
+         }
+         
+         function dimensionar_caja(tipo_dimension){
+            if(tipo_dimension==="aumentar"){
+               caja.style.width = "400px";
+               caja.style.height = "400px";
+               console.log("AUMENTAR"); 
+            }else{
+               caja.style.width = "100px";
+               caja.style.height = "100px"; 
+               console.log("REDUCIR");
+            }
+         }
+      </script>
+   </body>
+</html>
